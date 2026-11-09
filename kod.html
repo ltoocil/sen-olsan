@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerçek proje kodu · yeşil/siyah görünüm</title>
+<style>
+  body { margin:0; background:#000; color:#3dff3a; font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas, monospace; }
+  header { padding: 14px 18px 10px; border-bottom: 1px solid #145214; }
+  h1 { font-size: 18px; font-weight: 650; margin: 0 0 6px; color:#b6ffb0; }
+  p { margin: 0; color:#7dff78; font-size: 14px; line-height: 1.45; }
+  pre { margin: 0; padding: 10px 0 28px; }
+  .row { display: flex; min-height: 1.35em; }
+  .ln { width: 4.2rem; text-align: right; padding-right: 1rem; color: #1f7a32; }
+  .code { white-space: pre; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gerçek proje kodu · yeşil/siyah görünüm</h1>
+  <p>Salt okunur kod görüntüleyici. Bu bir canlı geliştirme ortamı değildir. Satırlar js/app.js dosyasından, kendi satır numaralarıyla alınmıştır. Görünen aralıklar: 151–175 ve 249–319.</p>
+</header>
+<pre>
+<div class="row"><span class="ln">151</span><span class="code">      "&lt;/ul&gt;"</span></div>
+<div class="row"><span class="ln">152</span><span class="code">    );</span></div>
+<div class="row"><span class="ln">153</span><span class="code">  }</span></div>
+<div class="row"><span class="ln">154</span><span class="code"> </span></div>
+<div class="row"><span class="ln">155</span><span class="code">  function themeNow() {</span></div>
+<div class="row"><span class="ln">156</span><span class="code">    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";</span></div>
+<div class="row"><span class="ln">157</span><span class="code">  }</span></div>
+<div class="row"><span class="ln">158</span><span class="code"> </span></div>
+<div class="row"><span class="ln">159</span><span class="code">  function stepBar(step) {</span></div>
+<div class="row"><span class="ln">160</span><span class="code">    var items = [1, 2, 3, 4, 5].map(function (number) {</span></div>
+<div class="row"><span class="ln">161</span><span class="code">      var cls = number &lt; step ? "is-done" : number === step ? "is-now" : "";</span></div>
+<div class="row"><span class="ln">162</span><span class="code">      var current = number === step ? ' aria-current="step"' : "";</span></div>
+<div class="row"><span class="ln">163</span><span class="code">      return "&lt;li class=\"" + cls + "\"" + current + "&gt;" + number + "&lt;/li&gt;";</span></div>
+<div class="row"><span class="ln">164</span><span class="code">    }).join("");</span></div>
+<div class="row"><span class="ln">165</span><span class="code">    return '&lt;ol class="stepbar" aria-label="Beş bölümün ilerlemesi"&gt;' + items +</span></div>
+<div class="row"><span class="ln">166</span><span class="code">      '&lt;li class="step-label"&gt;Bölüm ' + step + " / 5&lt;/li&gt;&lt;/ol&gt;";</span></div>
+<div class="row"><span class="ln">167</span><span class="code">  }</span></div>
+<div class="row"><span class="ln">168</span><span class="code"> </span></div>
+<div class="row"><span class="ln">169</span><span class="code">  function viewHome() {</span></div>
+<div class="row"><span class="ln">170</span><span class="code">    var scenario = currentScenario();</span></div>
+<div class="row"><span class="ln">171</span><span class="code">    var node = scenario.nodes.start;</span></div>
+<div class="row"><span class="ln">172</span><span class="code">    var pills = data.scenarios.map(function (item) {</span></div>
+<div class="row"><span class="ln">173</span><span class="code">      var pressed = item.id === scenario.id;</span></div>
+<div class="row"><span class="ln">174</span><span class="code">      return '&lt;li&gt;&lt;button type="button" class="pill" data-action="scenario" data-scenario="' +</span></div>
+<div class="row"><span class="ln">175</span><span class="code">        esc(item.id) + '" aria-pressed="' + (pressed ? "true" : "false") + '"&gt;' +</span></div>
+<div class="row"><span class="ln">249</span><span class="code">      var value = after[key];</span></div>
+<div class="row"><span class="ln">250</span><span class="code">      var delta = value - before[key];</span></div>
+<div class="row"><span class="ln">251</span><span class="code">      var reason = reasons &amp;&amp; reasons[key] ? reasons[key] : "";</span></div>
+<div class="row"><span class="ln">252</span><span class="code">      return '&lt;div class="meter"&gt;&lt;div class="meter-top"&gt;&lt;span class="meter-name"&gt;' + esc(labels[key]) +</span></div>
+<div class="row"><span class="ln">253</span><span class="code">        '&lt;/span&gt;&lt;span class="meter-num"&gt;' + value + " / 100. " + esc(deltaWords(delta)) + ".&lt;/span&gt;&lt;/div&gt;" +</span></div>
+<div class="row"><span class="ln">254</span><span class="code">        '&lt;div class="meter-track" aria-hidden="true"&gt;&lt;span class="meter-fill ' + widthClass(value) + '"&gt;&lt;/span&gt;&lt;/div&gt;' +</span></div>
+<div class="row"><span class="ln">255</span><span class="code">        (reason ? '&lt;p class="meter-why"&gt;' + esc(reason) + "&lt;/p&gt;" : "") + "&lt;/div&gt;";</span></div>
+<div class="row"><span class="ln">256</span><span class="code">    }).join("");</span></div>
+<div class="row"><span class="ln">257</span><span class="code">  }</span></div>
+<div class="row"><span class="ln">258</span><span class="code"> </span></div>
+<div class="row"><span class="ln">259</span><span class="code">  function metersHtml(scenario, ids, pendingId, fromBaseline) {</span></div>
+<div class="row"><span class="ln">260</span><span class="code">    var shownIds = pendingId ? ids.concat(pendingId) : ids.slice();</span></div>
+<div class="row"><span class="ln">261</span><span class="code">    var shown = scoreFor(scenario, shownIds);</span></div>
+<div class="row"><span class="ln">262</span><span class="code">    if (!shown) return "";</span></div>
+<div class="row"><span class="ln">263</span><span class="code">    var before = fromBaseline ? shown.baseline : scoreFor(scenario, ids).current;</span></div>
+<div class="row"><span class="ln">264</span><span class="code">    var meta = window.SEN_SCORE.meta;</span></div>
+<div class="row"><span class="ln">265</span><span class="code">    var peopleReasons = fromBaseline ? shown.finalPeopleWhy : {};</span></div>
+<div class="row"><span class="ln">266</span><span class="code">    var valueWhy = "";</span></div>
+<div class="row"><span class="ln">267</span><span class="code">    if (pendingId &amp;&amp; shown.steps.length) {</span></div>
+<div class="row"><span class="ln">268</span><span class="code">      var last = shown.steps[shown.steps.length - 1];</span></div>
+<div class="row"><span class="ln">269</span><span class="code">      valueWhy = last.vw || "";</span></div>
+<div class="row"><span class="ln">270</span><span class="code">      peopleReasons = last.pw || {};</span></div>
+<div class="row"><span class="ln">271</span><span class="code">    } else if (fromBaseline) {</span></div>
+<div class="row"><span class="ln">272</span><span class="code">      valueWhy = shown.valueChain.filter(Boolean).join(" ");</span></div>
+<div class="row"><span class="ln">273</span><span class="code">    }</span></div>
+<div class="row"><span class="ln">274</span><span class="code">    var valueRows = meterRows(meta.valueLabels, before.values, shown.current.values, null);</span></div>
+<div class="row"><span class="ln">275</span><span class="code">    var peopleRows = meterRows(meta.peopleLabels[scenario.id], before.people, shown.current.people, peopleReasons);</span></div>
+<div class="row"><span class="ln">276</span><span class="code">    return '&lt;div class="meters"&gt;' +</span></div>
+<div class="row"><span class="ln">277</span><span class="code">      meterBlock("Oyun içi değer göstergeleri", "Oyun içi değer göstergeleri; bilimsel ölçüm değildir. Başlangıç sayıları bu sahne için yazılmış tabanlardır ve 5’in katlarıdır.", valueRows + (valueWhy ? '&lt;p class="meter-why"&gt;' + esc(valueWhy) + "&lt;/p&gt;" : "")) +</span></div>
+<div class="row"><span class="ln">278</span><span class="code">      '&lt;p class="meter-separate"&gt;' + esc(meta.separate) + "&lt;/p&gt;" +</span></div>
+<div class="row"><span class="ln">279</span><span class="code">      meterBlock("Kurmaca memnuniyet", "Kurmaca simülasyon puanı; gerçek anket sonucu değildir. Puan, o kurmaca kişinin son pratik durumdan memnuniyetidir.", peopleRows) +</span></div>
+<div class="row"><span class="ln">280</span><span class="code">      "&lt;/div&gt;";</span></div>
+<div class="row"><span class="ln">281</span><span class="code">  }</span></div>
+<div class="row"><span class="ln">282</span><span class="code"> </span></div>
+<div class="row"><span class="ln">283</span><span class="code">  function stageHtml(node) {</span></div>
+<div class="row"><span class="ln">284</span><span class="code">    var speaker = node.speaker || { who: "anlatici", name: "Anlatıcı", role: "Kurmaca sahne", text: node.scene || node.info || "" };</span></div>
+<div class="row"><span class="ln">285</span><span class="code">    var face = window.SEN_CAST ? window.SEN_CAST.portrait(speaker.who) : "";</span></div>
+<div class="row"><span class="ln">286</span><span class="code">    return '&lt;div class="stage"&gt;&lt;div class="cast"&gt;' + face +</span></div>
+<div class="row"><span class="ln">287</span><span class="code">      '&lt;p class="cast-name"&gt;&lt;span&gt;' + esc(speaker.name) + '&lt;/span&gt; &lt;span class="cast-role"&gt;' + esc(speaker.role) + " · kurmaca&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;" +</span></div>
+<div class="row"><span class="ln">288</span><span class="code">      '&lt;blockquote class="bubble"&gt;&lt;p&gt;' + esc(speaker.text) + "&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;";</span></div>
+<div class="row"><span class="ln">289</span><span class="code">  }</span></div>
+<div class="row"><span class="ln">290</span><span class="code"> </span></div>
+<div class="row"><span class="ln">291</span><span class="code">  function viewPlay() {</span></div>
+<div class="row"><span class="ln">292</span><span class="code">    var scenario = currentScenario();</span></div>
+<div class="row"><span class="ln">293</span><span class="code">    var resolved = resolvePath(scenario, state.historyIds);</span></div>
+<div class="row"><span class="ln">294</span><span class="code">    var node = resolved.current;</span></div>
+<div class="row"><span class="ln">295</span><span class="code">    var step = state.historyIds.length + 1;</span></div>
+<div class="row"><span class="ln">296</span><span class="code">    var pending = node.options.find(function (option) { return option.id === state.pendingId; }) || null;</span></div>
+<div class="row"><span class="ln">297</span><span class="code">    var historyHtml = "";</span></div>
+<div class="row"><span class="ln">298</span><span class="code">    if (resolved.steps.length) {</span></div>
+<div class="row"><span class="ln">299</span><span class="code">      historyHtml = '&lt;ol class="history" aria-label="Şimdiye kadarki seçimler"&gt;' + resolved.steps.map(function (stepItem, index) {</span></div>
+<div class="row"><span class="ln">300</span><span class="code">        return "&lt;li&gt;&lt;span class=\"node\" aria-hidden=\"true\"&gt;&lt;/span&gt;&lt;div&gt;&lt;p class=\"history-title\"&gt;Karar " + (index + 1) +</span></div>
+<div class="row"><span class="ln">301</span><span class="code">          ". " + esc(stepItem.option.title) + "&lt;/p&gt;&lt;p&gt;" + esc(stepItem.option.event) + "&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;";</span></div>
+<div class="row"><span class="ln">302</span><span class="code">      }).join("") + "&lt;/ol&gt;";</span></div>
+<div class="row"><span class="ln">303</span><span class="code">    }</span></div>
+<div class="row"><span class="ln">304</span><span class="code">    var infoHtml = "";</span></div>
+<div class="row"><span class="ln">305</span><span class="code">    if (step &gt; 1) {</span></div>
+<div class="row"><span class="ln">306</span><span class="code">      infoHtml = '&lt;section class="panel panel-info" aria-labelledby="yeni-bilgi-baslik" tabindex="-1" id="yeni-bilgi"&gt;' +</span></div>
+<div class="row"><span class="ln">307</span><span class="code">        '&lt;p class="panel-title" id="yeni-bilgi-baslik"&gt;Şimdi karşına çıkan durum&lt;/p&gt;' +</span></div>
+<div class="row"><span class="ln">308</span><span class="code">        "&lt;p&gt;" + esc(node.info) + "&lt;/p&gt;&lt;/section&gt;";</span></div>
+<div class="row"><span class="ln">309</span><span class="code">    }</span></div>
+<div class="row"><span class="ln">310</span><span class="code">    var tradeHtml = "";</span></div>
+<div class="row"><span class="ln">311</span><span class="code">    if (pending) {</span></div>
+<div class="row"><span class="ln">312</span><span class="code">      tradeHtml = '&lt;section class="panel panel-trade" id="secim-karsiligi" tabindex="-1" aria-labelledby="karsilik-baslik"&gt;' +</span></div>
+<div class="row"><span class="ln">313</span><span class="code">        '&lt;p class="panel-title" id="karsilik-baslik"&gt;Bu seçimden hemen sonra olanlar&lt;/p&gt;&lt;p&gt;' + esc(pending.event) + "&lt;/p&gt;" +</span></div>
+<div class="row"><span class="ln">314</span><span class="code">        '&lt;div class="actions"&gt;&lt;button type="button" class="btn btn-primary" data-action="continue"&gt;' +</span></div>
+<div class="row"><span class="ln">315</span><span class="code">        (pending.ending ? "Sonucu ve rotaları gör" : "Sonraki karara geç") +</span></div>
+<div class="row"><span class="ln">316</span><span class="code">        "&lt;/button&gt;&lt;/div&gt;&lt;/section&gt;";</span></div>
+<div class="row"><span class="ln">317</span><span class="code">    }</span></div>
+<div class="row"><span class="ln">318</span><span class="code">    return shell(</span></div>
+<div class="row"><span class="ln">319</span><span class="code">      "play",</span></div>
+</pre>
+</body>
+</html>
